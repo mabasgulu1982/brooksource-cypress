@@ -9,9 +9,11 @@ describe('Job Search', () => {
       return jobs = data
     })
   })
+  beforeEach(() => {
+    jobSearchPage.openJobSearchPage(jobs.jobSearchPageURL)
+  })
 
   it('Search for job by keyword', () => {
-    jobSearchPage.openJobSearchPage(jobs.jobSearchPageURL)
     jobSearchPage.searchByKeyword(jobs.tester)
     jobSearchPage.viewSinglePosition(jobs.position)
     jobSearchPage.validationForJobDetails(jobs.jobTitle)
